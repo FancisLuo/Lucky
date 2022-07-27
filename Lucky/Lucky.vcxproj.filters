@@ -24,9 +24,15 @@
     <ClInclude Include="src\Lucky.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lucky\LuckyLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lucky\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lucky\LuckyLog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
