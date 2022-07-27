@@ -9,8 +9,13 @@ public:
 	~Sandbox() {}
 };
 
-void main()
+int main(int argc, char** argv)
 {
+	Lucky::LuckyLog::Init();
+
+	//Lucky::LuckyLog::GetCoreLogger()->warn("initialized!!");
+	LK_CORE_WARN("Initialized!!!");
+
 	Sandbox* sandbox = new Sandbox();
 	sandbox->Run();
 	delete sandbox;
