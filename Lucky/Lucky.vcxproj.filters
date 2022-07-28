@@ -4,6 +4,15 @@
     <Filter Include="Lucky">
       <UniqueIdentifier>{2D22A00D-9936-C8BE-62B8-6B1ECE8BC4EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lucky\Renderer">
+      <UniqueIdentifier>{73284DF5-5FF6-40FB-488A-B12134F71C60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\DirectX12">
+      <UniqueIdentifier>{6FE5EAC0-5BC9-AB16-C429-A669B02C9698}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Lucky.h" />
@@ -16,6 +25,17 @@
     <ClInclude Include="src\Lucky\LuckyLog.h">
       <Filter>Lucky</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lucky\Renderer\GraphicsContext.h">
+      <Filter>Lucky\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\D3D12Context.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\D3D12Util.h" />
+    <ClInclude Include="src\Platform\DirectX12\HrException.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h" />
+    <ClInclude Include="src\LuckyMacros.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3DCommon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lucky\Application.cpp">
@@ -24,5 +44,12 @@
     <ClCompile Include="src\Lucky\LuckyLog.cpp">
       <Filter>Lucky</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lucky\Renderer\GraphicsContext.cpp">
+      <Filter>Lucky\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\DirectX12\D3D12Context.cpp">
+      <Filter>Platform\DirectX12</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp" />
   </ItemGroup>
 </Project>

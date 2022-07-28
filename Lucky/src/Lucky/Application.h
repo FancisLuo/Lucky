@@ -1,17 +1,18 @@
 #pragma once
 
 #include "Core.h"
+#include "../Lucky.h"
 
-namespace Lucky
+NAMESPACE_LUCKY_START
+
+class LUCKY_API Application
 {
-	class LUCKY_API Application
-	{
-	public:
-		Application();
-		virtual ~Application();
+public:
+	Application();
+	virtual ~Application();
 
-		void Run();
-	};
-}
+	void Run();
+};
 
+NAMESPACE_LUCKY_END
 

@@ -5,21 +5,24 @@
 #include "Core.h"
 #include "spdlog/spdlog.h"
 
-namespace Lucky {
+#include "../Lucky.h"
 
-	class LUCKY_API LuckyLog
-	{
-	public:
-		static void Init();
+NAMESPACE_LUCKY_START
 
-		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-		inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+class LUCKY_API LuckyLog
+{
+public:
+	static void Init();
 
-	private:
-		static std::shared_ptr<spdlog::logger> s_CoreLogger;
-		static std::shared_ptr<spdlog::logger> s_ClientLogger;
-	};
-}
+	inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
+	inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+
+private:
+	static std::shared_ptr<spdlog::logger> s_CoreLogger;
+	static std::shared_ptr<spdlog::logger> s_ClientLogger;
+};
+
+NAMESPACE_LUCKY_END
 
 // core log macros
 #define LK_CORE_ERROR(...)	::Lucky::LuckyLog::GetCoreLogger()->error(__VA_ARGS__)

@@ -143,14 +143,24 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\LuckyMacros.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h" />
     <ClInclude Include="src\Lucky.h" />
     <ClInclude Include="src\Lucky\Application.h" />
     <ClInclude Include="src\Lucky\Core.h" />
     <ClInclude Include="src\Lucky\LuckyLog.h" />
+    <ClInclude Include="src\Lucky\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Context.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Util.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3DCommon.h" />
+    <ClInclude Include="src\Platform\DirectX12\HrException.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp" />
     <ClCompile Include="src\Lucky\Application.cpp" />
     <ClCompile Include="src\Lucky\LuckyLog.cpp" />
+    <ClCompile Include="src\Lucky\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\D3D12Context.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
