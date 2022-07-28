@@ -254,12 +254,12 @@ void D3D12Adapter::createDepthStencilView()
 			&depthStencilDesc,
 			D3D12_RESOURCE_STATE_COMMON,	// 初始状态
 			&optClear,
-			IID_PPV_ARGS(&m_DepthStencilBuffer)
+			IID_PPV_ARGS(m_DepthStencilBuffer.GetAddressOf())
 		)
 	);
 
 	// 利用此资源格式，为整个资源的第0 mip层创建描述符
-	m_D3DDevice->CreateRenderTargetView(m_DepthStencilBuffer.Get(), nullptr, m_DsvHeap->GetCPUDescriptorHandleForHeapStart());
+	m_D3DDevice->CreateDepthStencilView(m_DepthStencilBuffer.Get(), nullptr, m_DsvHeap->GetCPUDescriptorHandleForHeapStart());
 
 	// 转换资源初始状态为深度缓冲区
 	D3D12_RESOURCE_BARRIER rb = CD3DX12_RESOURCE_BARRIER::Transition(m_DepthStencilBuffer.Get(), D3D12_RESOURCE_STATE_COMMON, D3D12_RESOURCE_STATE_DEPTH_WRITE);
