@@ -12,6 +12,7 @@ public:
 	~D3D12Wrapper();
 
 public:
+	bool InitializeCommon();
 	bool InitializeDirect3D(HWND, int, int);
 	void Update();
 	void Render();

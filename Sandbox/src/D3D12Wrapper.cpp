@@ -14,6 +14,13 @@ D3D12Wrapper::~D3D12Wrapper()
 	}
 }
 
+bool D3D12Wrapper::InitializeCommon()
+{
+	Lucky::LuckyLog::Init();
+
+	return true;
+}
+
 bool D3D12Wrapper::InitializeDirect3D(HWND hWnd, int nWidth, int nHeight)
 {
 	DX3D12_ADAPTER_INFO info = {};
@@ -29,12 +36,15 @@ bool D3D12Wrapper::InitializeDirect3D(HWND hWnd, int nWidth, int nHeight)
 
 void D3D12Wrapper::Update()
 {
+	m_Adapter->OnUpdate();
 }
 
 void D3D12Wrapper::Render()
 {
+	m_Adapter->OnRender();
 }
 
 void D3D12Wrapper::Destroy()
 {
+	m_Adapter->OnDestroy();
 }

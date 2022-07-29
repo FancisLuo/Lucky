@@ -24,6 +24,11 @@ public:
 	void PreInitialize(const DX3D12_ADAPTER_INFO* pInfo);
 	void Initialize();
 
+	void OnUpdate();
+	void OnRender();
+
+	void OnDestroy();
+
 protected:
 	void flushCommandQueue();
 

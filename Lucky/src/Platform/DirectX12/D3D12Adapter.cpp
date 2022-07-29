@@ -1,6 +1,5 @@
 #include "D3D12Adapter.h"
 
-//#include <Windows.h>
 #include "HrException.h"
 
 NAMESPACE_LUCKY_START
@@ -43,6 +42,30 @@ void D3D12Adapter::Initialize()
 	createDepthStencilView();
 	setViewport();
 	setScissorRect();
+
+	LK_CORE_INFO("Initialized Adapter");
+}
+
+void D3D12Adapter::OnUpdate()
+{
+	if (!m_PreInitialized)
+	{
+		return;
+	}
+
+}
+
+void D3D12Adapter::OnRender()
+{
+	if (!m_PreInitialized)
+	{
+		return;
+	}
+
+}
+
+void D3D12Adapter::OnDestroy()
+{
 }
 
 void D3D12Adapter::flushCommandQueue()

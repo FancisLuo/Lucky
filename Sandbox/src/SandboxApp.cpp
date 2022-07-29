@@ -46,18 +46,27 @@ BOOL                InitInstance(HINSTANCE, int);
 int                 Run();
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
+//int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
+int main(int argc, char** argv)
 {
-	UNREFERENCED_PARAMETER(hPrevInstance);
-	UNREFERENCED_PARAMETER(lpCmdLine);
+	//UNREFERENCED_PARAMETER(hPrevInstance);
+	//UNREFERENCED_PARAMETER(lpCmdLine);
 
     LPWSTR title        = lstrcpynW(szTitle,        L"App Title",   MAX_LOADSTRING);
     LPWSTR wndClassName = lstrcpynW(szWindowClass,  L"Sandbox App", MAX_LOADSTRING);
     LPWSTR menuName     = lstrcpynW(szMenuName,     L"Menu",        MAX_LOADSTRING);
 
+    HINSTANCE hInstance = GetModuleHandle(0);
+    int nCmdShow        = SW_SHOWDEFAULT;
+
     MyRegisterClass(hInstance);
 
     if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
+    if (!gWrapper.InitializeCommon())
     {
         return FALSE;
     }
