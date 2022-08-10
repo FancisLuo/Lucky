@@ -28,14 +28,34 @@
     <ClInclude Include="src\Lucky\Renderer\GraphicsContext.h">
       <Filter>Lucky\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\LuckyMacros.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\DirectX12\D3D12Context.h">
       <Filter>Platform\DirectX12</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\DirectX12\D3D12Util.h" />
-    <ClInclude Include="src\Platform\DirectX12\HrException.h" />
-    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h" />
-    <ClInclude Include="src\LuckyMacros.h" />
-    <ClInclude Include="src\Platform\DirectX12\D3DCommon.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12UploadBuffer.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\D3D12Util.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\D3DCommon.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\D3DUtils.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\DirectX12\HrException.h">
+      <Filter>Platform\DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lucky\Engine\Entity.h" />
+    <ClInclude Include="src\Lucky\Engine\World.h" />
+    <ClInclude Include="src\Lucky\Engine\Components.h" />
+    <ClInclude Include="src\Lucky\Core\UUID.h" />
+    <ClInclude Include="src\Lucky\Math\Vector.h" />
+    <ClInclude Include="src\Lucky\Math\Quaternion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lucky\Application.cpp">
@@ -47,9 +67,21 @@
     <ClCompile Include="src\Lucky\Renderer\GraphicsContext.cpp">
       <Filter>Lucky\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp">
+      <Filter>Platform\DirectX12</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\DirectX12\D3D12Context.cpp">
       <Filter>Platform\DirectX12</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\D3D12UploadBuffer.cpp">
+      <Filter>Platform\DirectX12</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\DirectX12\D3DUtils.cpp">
+      <Filter>Platform\DirectX12</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lucky\Engine\Entity.cpp" />
+    <ClCompile Include="src\Lucky\Engine\World.cpp" />
+    <ClCompile Include="src\Lucky\Core\UUID.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\HrException.cpp" />
   </ItemGroup>
 </Project>

@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\vendor\entt\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -95,7 +95,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\vendor\entt\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -115,7 +115,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lucky\vendor\spdlog\include;..\Lucky\vendor\entt\include;..\Lucky\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -131,6 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\D3D12Wrapper.h" />
+    <ClInclude Include="src\SandboxCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\D3D12Wrapper.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
@@ -138,10 +142,6 @@
     <ProjectReference Include="..\Lucky\Lucky.vcxproj">
       <Project>{2D22A00D-9936-C8BE-62B8-6B1ECE8BC4EF}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\D3D12Wrapper.h" />
-    <ClInclude Include="src\SandboxCommon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

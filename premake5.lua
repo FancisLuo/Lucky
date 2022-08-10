@@ -26,7 +26,8 @@ project "Lucky"
 
     includedirs
     {
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{prj.name}/vendor/entt/include"
     }
 
     filter "system:windows"
@@ -75,6 +76,7 @@ project "Sandbox"
     includedirs
     {
         "Lucky/vendor/spdlog/include",
+        "Lucky/vendor/entt/include",
         "Lucky/src"
     }
 

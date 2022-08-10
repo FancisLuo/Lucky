@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_BUILD_DLL;LK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_BUILD_DLL;LK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -123,7 +123,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LK_PLATFORM_WINDOWS;LK_BUILD_DLL;LK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -143,24 +143,38 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\LuckyMacros.h" />
-    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h" />
+    <ClInclude Include="src\Lucky\Engine\Components.h" />
+    <ClInclude Include="src\Lucky\Engine\Entity.h" />
     <ClInclude Include="src\Lucky.h" />
     <ClInclude Include="src\Lucky\Application.h" />
     <ClInclude Include="src\Lucky\Core.h" />
     <ClInclude Include="src\Lucky\LuckyLog.h" />
+    <ClInclude Include="src\Lucky\Math\Quaternion.h" />
+    <ClInclude Include="src\Lucky\Math\Vector.h" />
     <ClInclude Include="src\Lucky\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\LuckyMacros.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12Adapter.h" />
     <ClInclude Include="src\Platform\DirectX12\D3D12Context.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3D12UploadBuffer.h" />
     <ClInclude Include="src\Platform\DirectX12\D3D12Util.h" />
     <ClInclude Include="src\Platform\DirectX12\D3DCommon.h" />
+    <ClInclude Include="src\Platform\DirectX12\D3DUtils.h" />
     <ClInclude Include="src\Platform\DirectX12\HrException.h" />
+    <ClInclude Include="src\Lucky\Engine\World.h" />
+    <ClInclude Include="src\Lucky\Core\UUID.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp" />
+    <ClCompile Include="src\Lucky\Engine\Entity.cpp" />
     <ClCompile Include="src\Lucky\Application.cpp" />
     <ClCompile Include="src\Lucky\LuckyLog.cpp" />
     <ClCompile Include="src\Lucky\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\D3D12Adapter.cpp" />
     <ClCompile Include="src\Platform\DirectX12\D3D12Context.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\D3D12UploadBuffer.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\D3DUtils.cpp" />
+    <ClCompile Include="src\Lucky\Engine\World.cpp" />
+    <ClCompile Include="src\Lucky\Core\UUID.cpp" />
+    <ClCompile Include="src\Platform\DirectX12\HrException.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

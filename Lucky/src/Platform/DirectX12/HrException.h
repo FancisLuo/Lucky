@@ -3,12 +3,9 @@
 #include <stdexcept>
 #include <Windows.h>
 
-std::string HrToString(HRESULT hr)
-{
-	char s_str[64] = {};
-	sprintf_s(s_str, "HRESULT of 0x%08X", static_cast<UINT>(hr));
-	return std::string(s_str);
-}
+std::string HrToString(HRESULT hr);
+
+void ThrowIfFailed(HRESULT hr);
 
 class HrException : public std::runtime_error
 {
@@ -21,10 +18,4 @@ private:
 	const HRESULT m_hr;
 };
 
-void ThrowIfFailed(HRESULT hr)
-{
-	if (FAILED(hr))
-	{
-		throw HrException(hr);
-	}
-}
+

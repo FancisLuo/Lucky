@@ -46,6 +46,37 @@ void D3D12Adapter::Initialize()
 	LK_CORE_INFO("Initialized Adapter");
 }
 
+void D3D12Adapter::PostInitialize()
+{
+	// 初始化D3D12 API之后调用
+	if (!m_PreInitialized)
+	{
+		LK_CORE_ERROR("先调用PreIntialize()");
+		return;
+	}
+	
+	// 重置命令列表
+	ThrowIfFailed(
+		m_CommandList->Reset(m_DirectCmdListAlloc.Get(), nullptr)
+	);
+
+	buildDescriptorHeaps();
+	buildConstantBuffers();
+	buildRootSignature();
+	buildShadersAndInputLayout();
+	buildGeometry();
+	buildPSO();
+
+	ThrowIfFailed(
+		m_CommandList->Close()
+	);
+
+	ID3D12CommandList* cmdLists[] = { m_CommandList.Get() };
+	m_CommandQueue->ExecuteCommandLists(_countof(cmdLists), cmdLists);
+
+	flushCommandQueue();
+}
+
 void D3D12Adapter::OnUpdate()
 {
 	if (!m_PreInitialized)
@@ -306,6 +337,31 @@ void D3D12Adapter::setScissorRect()
 {
 	m_ScissorRect = { 0, 0, m_ClientWidth / 2, m_ClientHeight / 2 };
 	m_CommandList->RSSetScissorRects(1, &m_ScissorRect);
+}
+
+void D3D12Adapter::buildDescriptorHeaps()
+{
+
+}
+
+void D3D12Adapter::buildConstantBuffers()
+{
+}
+
+void D3D12Adapter::buildRootSignature()
+{
+}
+
+void D3D12Adapter::buildShadersAndInputLayout()
+{
+}
+
+void D3D12Adapter::buildGeometry()
+{
+}
+
+void D3D12Adapter::buildPSO()
+{
 }
 
 NAMESPACE_LUCKY_END
